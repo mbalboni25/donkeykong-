@@ -1,3 +1,4 @@
+import pygame
 #hello my name is sophie
 #hi my name is can
 class Ground:
