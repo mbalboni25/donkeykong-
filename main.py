@@ -42,14 +42,11 @@ class JumpMan:
         for ground in grounds:
             if (
                 self.rect.colliderect(ground.rect)
-                and player.rect.bottom - 8 <= ground.rect.top
+                and player.rect.bottom - 7 <= ground.rect.top
                 and self.velocityY > 0
             ):
                 player.rect.bottom = ground.rect.top
                 self.onGround = True
-            print(
-                f"\n \n self.onGround= {self.onGround}\nplayer.rect.bottom= {player.rect.bottom}\nground.rect.top= {ground.rect.top}\n\n"
-            )
 
         # change donwards velocity
         if not self.onGround:
@@ -70,7 +67,7 @@ class JumpMan:
             elif self.velocityX < 0:
                 self.velocityX += 8 * dt
 
-        #moves player
+        # moves player
         self.rect.y += self.velocityY
         self.rect.x += self.velocityX
 
@@ -141,7 +138,7 @@ while running:
     elif keys[pygame.K_d] or keys[pygame.K_RIGHT]:
         friction = False
         player.setVelocityX("d")
-    if (keys[pygame.K_w] or keys[pygame.K_UP]) and player.onGround:
+    if keys[pygame.K_SPACE] and player.onGround:
         player.jump()
 
     # updates the player (location)
