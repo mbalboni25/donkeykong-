@@ -75,6 +75,11 @@ class JumpMan:
 class Barrel:
     def __init__(self) -> None:
         barrels.append(self)
+        
+class Laddder:
+    def __init__(self, x, y, width, height) -> None:
+        ladders.append(self)
+        self.rect = pygame.Rect(x, y, width, height)
 
 
 class Monkey:
