@@ -1,0 +1,11 @@
+   if climb: #This code is to restrict jumpmans movement in the X axis while he is climbing
+                # so he can go up and down but not side to side
+                player.y_change = -2
+                player.x_change = 0
+                player.climbing = True
+            if event.key == pygame.key_down: #This code is supposed to react with the player pressing down on the "s" key
+                #making jumpman move down a ladder (I do not know how to make sprites react with keys so ill need cans help)
+                if down:
+                    player.y_change = 2
+                    player.x_change = 0
+                    player.climbing = True #same thing as going up but in reverse
